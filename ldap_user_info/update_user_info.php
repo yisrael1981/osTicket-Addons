@@ -55,7 +55,11 @@ $filter = $config->ldap_filter;
 // Comments are copied from the Net_LDAP2 manual...
 // We define a custom searchbase here. If you pass NULL, the basedn provided
 // in the Net_LDAP2 configuration will be used. This is often not what you want.
-$searchbase = $ldap_config->basedn;
+// the following code did not work for me 
+//$searchbase = $ldap_config->basedn;
+// i replaced it with the below
+$searchbase = $ldap_config['basedn'];
+
 
 // Some options:
 // It is a good practice to limit the requested attributes to only those you actually want to use later.
